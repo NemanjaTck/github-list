@@ -43,7 +43,7 @@ class List extends React.Component {
 
     return (
       <div className="ui container">
-        <h2 className="ui header">GitHub users list</h2>
+        <h2>GitHub users list</h2>
         <ul loading={loading}>
           { users.map(user =>
               <li key={user.login}>

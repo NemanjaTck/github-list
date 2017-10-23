@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 
 const User = ({ user }) =>
+<div className="container">
 <div className="ui card">
   <div className="image">
     <img src={user.avatar_url} alt={user.login}/>
@@ -26,6 +27,7 @@ const User = ({ user }) =>
     </a>
   </div>
 
+</div>
 </div>
 
 /* React components are functions */
