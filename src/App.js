@@ -6,7 +6,7 @@ import User from './components/User';
 const App = () =>
 <div className="ui container">
   <Route path="/" exact component={List}/>
-  <Route path="/user/:login" exact component={User}/>
+  <Route path="/user/:login" component={User}/>
 </div>
 
 export default App;

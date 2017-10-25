@@ -39,20 +39,24 @@ class List extends React.Component {
   }
 
   render() {
-    const { users, loading } = this.state;
+    const { users } = this.state;
 
     return (
       <div className="ui container">
         <h2>GitHub users list</h2>
-        <ul loading={loading}>
+        <div className="ui middle aligned divided list">
           { users.map(user =>
-              <li key={user.login}>
-                <h4 className="ui header">{user.login}</h4>
+              <div className="item" key={user.login}>
                 <img className="ui avatar image" src={user.avatar_url} alt={user.login}/>
-                <Button onClick={ () => this.onClick(user.login) } id={ user.login }>Details</Button>
-              </li>
+                <div className="content">
+                  <span className="header">{user.login}</span>
+                </div>
+                <div className="right floated content">
+                  <Button onClick={ () => this.onClick(user.login) } id={ user.login }>Details</Button>
+                </div>
+              </div>
            )}
-         </ul>
+         </div>
       </div>
     );
   }

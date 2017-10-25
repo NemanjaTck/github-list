@@ -16,17 +16,12 @@ const User = ({ user }) =>
     </div>
   </div>
   <div className="extra content">
-    <a>
-      <i className="user icon" />
-      <Link to={`{user.html_url}`}>Go to GitHub</Link>
-    </a>
+    <i className="user icon" />
+    <Link to={`{user.html_url}`}>Go to GitHub</Link>
   </div>
   <div className="extra content">
-    <a>
-      <Link className="ui button" to="/">Previous page</Link>
-    </a>
+    <Link className="ui button" to="/">Previous page</Link>
   </div>
-
 </div>
 </div>
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme';
-import configureStore from 'redux-mock-store';
+import configureStore from 'redux-mock-store'
 import ConnectedUser from '../components/User';
 
-describe('USER --- REACT-REDUX (Shallow + passing the {store} directly)',()=>{
+describe('Mounting the component with mocked store',()=>{
     const initialState = {
       "login": "NemanjaTck",
       "id": 3010324,
@@ -36,20 +36,12 @@ describe('USER --- REACT-REDUX (Shallow + passing the {store} directly)',()=>{
       "created_at": "2012-12-10T19:22:36Z",
       "updated_at": "2017-10-13T19:42:19Z"
     }
-    const mockStore = configureStore()
+    const mockStore = configureStore();
     let store;
-    let container;
+    store = mockStore(initialState);
 
-    beforeEach(()=>{
-        store = mockStore(initialState)
-        container = shallow(<ConnectedUser store={store} /> )
-    })
-
-    it('render the connected component', () => {
-       expect(container.length).toEqual(1);
+    it('Components shallows without failing', () => {
+       shallow(<ConnectedUser store={store} />);
     });
 
-    it('check Prop matches with initialState', () => {
-       expect(container.prop('output')).toEqual(initialState.output);
-    });
 });
